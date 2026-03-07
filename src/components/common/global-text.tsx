@@ -1,4 +1,4 @@
-import { cn } from "@/src/lib/cn";
+import { cn } from "@/lib/cn";
 import { Text as RNText, TextProps } from "react-native";
 
 export function Text({ className, ...props }: TextProps) {
