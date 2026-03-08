@@ -3,6 +3,7 @@ import ToastProvider from "@/components/providers/toast-provider";
 import { ClerkProvider } from '@clerk/expo';
 import { tokenCache } from '@clerk/expo/token-cache';
 import { Stack } from "expo-router";
+import { View } from "react-native";
 import FontProvider from "../components/providers/font-provider";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import "../css/global.css";
@@ -19,12 +20,21 @@ export default function RootLayout() {
       <ThemeProvider>
         <FontProvider>
           <CustomStatusBar />
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          </Stack>
+          <RootNavigator />
           <ToastProvider />
         </FontProvider>
       </ThemeProvider>
     </ClerkProvider>
+  );
+}
+
+function RootNavigator() {
+  return (
+    <View className="flex-1 bg-surface-primary">
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </View>
   );
 }

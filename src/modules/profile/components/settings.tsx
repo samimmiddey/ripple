@@ -108,12 +108,12 @@ const Settings = () => {
          {/* Sign Out Button */}
          <CustomPressable
             onPress={handleSignOut}
-            className='mt-4 bg-red-500/10 border border-red-500/50'
+            className={`mt-4 bg-red-500/10 border border-red-500/50 ${isSigningOut ? 'bg-surface-muted cursor-not-allowed' : ''}`}
             disabled={isSigningOut}
          >
             {
                isSigningOut ? (
-                  <ActivityIndicator size={24} color='red' />
+                  <ActivityIndicator size={24} color={colors.text.muted} />
                ) : (
                   <Text className='text-[15px] font-interSemiBold text-red-500'>Sign Out</Text>
                )

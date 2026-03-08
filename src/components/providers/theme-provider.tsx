@@ -36,7 +36,7 @@ const lightColors: ColorScheme = {
       primary: "#ffffff",
       secondary: "#f3f4f6",
       tertiary: "#dbeafe",
-      muted: "#99a1af"
+      muted: "#d1d5dc"
    },
    text: {
       primary: "#18181b",
@@ -59,7 +59,7 @@ const darkColors: ColorScheme = {
       primary: "#121721",
       secondary: "#1c2331",
       tertiary: "#1c398e",
-      muted: "#18181b"
+      muted: "#1e2939"
    },
    text: {
       primary: "#d1d5dc",

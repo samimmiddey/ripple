@@ -105,11 +105,11 @@ export default function SignUp() {
                         ]}
                         onPress={handleVerify}
                         disabled={fetchStatus === 'fetching'}
-                        className='mt-6'
+                        className={`mt-6 ${(fetchStatus === 'fetching') ? 'bg-surface-muted cursor-not-allowed' : ''}`}
                      >
                         {
                            fetchStatus === 'fetching' ? (
-                              <ActivityIndicator size={24} color={colors.text.inverse} />
+                              <ActivityIndicator size={24} color={colors.text.muted} />
                            ) : (
                               <>
                                  <Text className='text-text-inverse font-interMedium text-lg'>
@@ -194,11 +194,11 @@ export default function SignUp() {
                      ]}
                      onPress={handleSubmit}
                      disabled={!emailAddress || !password || fetchStatus === 'fetching'}
-                     className='mt-7'
+                     className={`mt-7 ${(fetchStatus === 'fetching') ? 'bg-surface-muted cursor-not-allowed' : ''}`}
                   >
                      {
                         fetchStatus === 'fetching' ? (
-                           <ActivityIndicator size={24} color={colors.text.inverse} />
+                           <ActivityIndicator size={24} color={colors.text.muted} />
                         ) : (
                            <>
                               <Text className='text-text-inverse font-interMedium text-lg'>
