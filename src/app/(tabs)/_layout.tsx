@@ -1,3 +1,4 @@
+import FullScreenLoader from '@/components/common/full-screen-loader';
 import { Text } from '@/components/common/global-text';
 import useTheme from '@/hooks/use-theme';
 import { useAuth } from '@clerk/expo';
@@ -10,7 +11,7 @@ const TabsLayout = () => {
    const { isSignedIn, isLoaded } = useAuth()
 
    if (!isLoaded) {
-      return null
+      return <FullScreenLoader />
    }
 
    if (!isSignedIn) {

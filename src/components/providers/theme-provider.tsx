@@ -52,19 +52,19 @@ const lightColors: ColorScheme = {
 
 const darkColors: ColorScheme = {
    brand: {
-      primary: "#60a5fa",
+      primary: "#6897fd",
       secondary: "#93c5fd"
    },
    surface: {
-      primary: "#0f172a",
-      secondary: "#1e293b",
+      primary: "#121721",
+      secondary: "#1c2331",
       tertiary: "#1c398e",
-      muted: "#364153"
+      muted: "#18181b"
    },
    text: {
-      primary: "#f1f5f9",
+      primary: "#d1d5dc",
       secondary: "#94a3b8",
-      muted: "#364153",
+      muted: "#636d7e",
       inverse: "#0f172a"
    },
    border: {

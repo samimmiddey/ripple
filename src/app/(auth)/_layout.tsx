@@ -1,3 +1,4 @@
+import FullScreenLoader from '@/components/common/full-screen-loader'
 import { useAuth } from '@clerk/expo'
 import { Redirect, Stack } from 'expo-router'
 
@@ -5,7 +6,7 @@ export default function AuthRoutesLayout() {
    const { isSignedIn, isLoaded } = useAuth()
 
    if (!isLoaded) {
-      return null
+      return <FullScreenLoader />
    }
 
    if (isSignedIn) {

@@ -1,11 +1,8 @@
-import useTheme from '@/hooks/use-theme'
 import { View } from 'react-native'
 import Toast from 'react-native-toast-message'
 import { Text } from '../common/global-text'
 
 const ToastProvider = () => {
-   const { colors } = useTheme();
-
    return (
       <Toast
          position='top'
@@ -24,11 +21,11 @@ const ToastProvider = () => {
                      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
                   }}
                >
-                  <Text style={{ color: colors.text.inverse, fontSize: 16, fontWeight: 'bold' }}>
+                  <Text style={{ color: '#fff', fontSize: 16, fontWeight: 'bold' }}>
                      {text1}
                   </Text>
                   {text2 && (
-                     <Text style={{ color: colors.text.inverse, fontSize: 14 }}>
+                     <Text style={{ color: '#fff', fontSize: 14 }}>
                         {text2}
                      </Text>
                   )}
@@ -46,11 +43,11 @@ const ToastProvider = () => {
                      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
                   }}
                >
-                  <Text style={{ color: colors.text.inverse, fontSize: 16, fontWeight: 'bold' }}>
+                  <Text style={{ color: '#fff', fontSize: 16, fontWeight: 'bold' }}>
                      {text1}
                   </Text>
                   {text2 && (
-                     <Text style={{ color: colors.text.inverse, fontSize: 14 }}>
+                     <Text style={{ color: '#fff', fontSize: 14 }}>
                         {text2}
                      </Text>
                   )}

@@ -21,7 +21,7 @@ const CustomInput = ({
 }: PropsType) => {
    return (
       <TextInput
-         className={cn('border border-border-secondary bg-surface-secondary p-4 text-[16px] rounded-xl focus:outline-none focus:border-brand-primary', className)}
+         className={cn('border border-border-secondary bg-surface-secondary p-4 text-[16px] rounded-xl focus:outline-none focus:border-brand-primary text-text-primary', className)}
          value={value}
          placeholder={placeholder}
          placeholderTextColor={placeholderTextColor}

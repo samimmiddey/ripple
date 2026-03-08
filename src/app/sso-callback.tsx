@@ -1,7 +1,7 @@
+import FullScreenLoader from '@/components/common/full-screen-loader';
 import { useAuth } from '@clerk/expo';
 import { Redirect } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Text, View } from 'react-native';
 
 export default function SSOCallback() {
    const { isLoaded, isSignedIn } = useAuth();
@@ -19,10 +19,7 @@ export default function SSOCallback() {
 
    if (!isLoaded || waiting) {
       return (
-         <View className="flex-1 items-center justify-center gap-4 bg-surface-primary">
-            <ActivityIndicator size="large" />
-            <Text className="text-lg font-interMedium">Completing login...</Text>
-         </View>
+         <FullScreenLoader text='Completing login...' />
       );
    }
 

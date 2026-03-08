@@ -15,10 +15,10 @@ const ChatList = () => {
                   <Image source={item.img} className='w-14 h-14 rounded-full' />
                   <View className='gap-[3px] flex-1'>
                      <Text numberOfLines={1} className='text-text-primary text-[16px] font-interSemiBold'>{item.name}</Text>
-                     <Text numberOfLines={1} className='text-text-primary font-interRegular'>{item.lastMessage}</Text>
+                     <Text numberOfLines={1} className='text-text-secondary font-interRegular'>{item.lastMessage}</Text>
                   </View>
                   <View className='items-end gap-1'>
-                     <Text className='text-text-primary font-interRegular text-sm'>{item.time}</Text>
+                     <Text className='text-text-secondary font-interRegular text-sm'>{item.time}</Text>
                      {item.notificationCount > 0 && (
                         <View className='min-w-5 h-5 px-1 bg-primary rounded-full flex items-center justify-center bg-brand-primary'>
                            <Text className='text-text-inverse text-[11px] font-interRegular'>{item.notificationCount}</Text>

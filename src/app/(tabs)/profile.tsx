@@ -1,11 +1,11 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import Profile from '@/modules/profile'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ProfileScreen = () => {
    return (
-      <View>
-         <Text>ProfileScreen</Text>
-      </View>
+      <SafeAreaView edges={['top']} className="flex-1 bg-surface-primary">
+         <Profile />
+      </SafeAreaView>
    )
 }
 
