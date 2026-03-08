@@ -8,10 +8,10 @@ const IconPressable = ({ children }: { children: React.ReactNode }) => {
       <Pressable
          className="h-8 w-8 rounded-full items-center justify-center"
          style={({ pressed }) => [
-            pressed && { backgroundColor: colors.muted + '30', }
+            pressed && { backgroundColor: colors.surface.muted + '30', }
          ]}
          android_ripple={{
-            color: colors.muted + '30',
+            color: colors.surface.muted + '30',
             borderless: true,
             foreground: true
          }}

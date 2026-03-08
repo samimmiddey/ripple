@@ -1,46 +1,76 @@
+import { hexToRgb } from '@/utils/hext-to-rgb';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { vars } from 'nativewind';
 import { createContext, useEffect, useState } from 'react';
+import { View } from 'react-native';
 
 export interface ColorScheme {
-   primary: string;
-   secondary: string;
-   tertiary: string;
-   textDark: string;
-   textLight: string;
-   textGray: string;
-   primaryBg: string;
-   secondaryBg: string;
-   tertiaryBg: string;
-   muted: string;
-   border: string
+   brand: {
+      primary: string;
+      secondary: string;
+   };
+   surface: {
+      primary: string;
+      secondary: string;
+      tertiary: string;
+      muted: string;
+   };
+   text: {
+      primary: string;
+      secondary: string;
+      muted: string;
+      inverse: string;
+   };
+   border: {
+      primary: string;
+      secondary: string;
+   };
 }
 
 const lightColors: ColorScheme = {
-   primary: "#155dfc",
-   secondary: "#8ec5ff",
-   tertiary: "#27272a",
-   textDark: "#18181b",
-   textLight: "#fff",
-   textGray: "#4a5565",
-   primaryBg: "#fff",
-   secondaryBg: "#f3f4f6",
-   tertiaryBg: "#dbeafe",
-   muted: '#99a1af',
-   border: '#e2e8f0'
+   brand: {
+      primary: "#155dfc",
+      secondary: "#8ec5ff"
+   },
+   surface: {
+      primary: "#ffffff",
+      secondary: "#f3f4f6",
+      tertiary: "#dbeafe",
+      muted: "#99a1af"
+   },
+   text: {
+      primary: "#18181b",
+      secondary: "#4a5565",
+      muted: "#99a1af",
+      inverse: "#ffffff"
+   },
+   border: {
+      primary: "#99a1af",
+      secondary: '#f3f4f6'
+   }
 };
 
 const darkColors: ColorScheme = {
-   primary: "#60a5fa",
-   secondary: "#93c5fd",
-   tertiary: "#1e293b",
-   textDark: "#f1f5f9",
-   textLight: "#e2e8f0",
-   textGray: "#94a3b8",
-   primaryBg: "#0f172a",
-   secondaryBg: "#1e293b",
-   tertiaryBg: "#1c398e",
-   muted: '#364153',
-   border: '#e2e8f0'
+   brand: {
+      primary: "#60a5fa",
+      secondary: "#93c5fd"
+   },
+   surface: {
+      primary: "#0f172a",
+      secondary: "#1e293b",
+      tertiary: "#1c398e",
+      muted: "#364153"
+   },
+   text: {
+      primary: "#f1f5f9",
+      secondary: "#94a3b8",
+      muted: "#364153",
+      inverse: "#0f172a"
+   },
+   border: {
+      primary: "#4a5565",
+      secondary: '#1e293b'
+   }
 };
 
 interface ThemeContextType {
@@ -72,9 +102,32 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
    const colors = isDarkMode ? darkColors : lightColors;
 
+   const themeVariables = vars({
+      "--brand-primary": hexToRgb(colors.brand.primary),
+      "--brand-secondary": hexToRgb(colors.brand.secondary),
+
+      "--surface-primary": hexToRgb(colors.surface.primary),
+      "--surface-secondary": hexToRgb(colors.surface.secondary),
+      "--surface-tertiary": hexToRgb(colors.surface.tertiary),
+      "--surface-muted": hexToRgb(colors.surface.muted),
+
+      "--text-primary": hexToRgb(colors.text.primary),
+      "--text-secondary": hexToRgb(colors.text.secondary),
+      "--text-muted": hexToRgb(colors.text.muted),
+      "--text-inverse": hexToRgb(colors.text.inverse),
+
+      "--border-primary": hexToRgb(colors.border.primary),
+      "--border-secondary": hexToRgb(colors.border.secondary),
+   });
+
    return (
       <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode, colors }}>
-         {children}
+         <View
+            style={themeVariables}
+            className={isDarkMode ? "dark flex-1" : "flex-1"}
+         >
+            {children}
+         </View>
       </ThemeContext.Provider>
    )
 }

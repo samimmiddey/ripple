@@ -18,12 +18,12 @@ export default function UserSuggestions() {
                <View>
                   <View
                      style={{ ...styles.card, borderStyle: 'dashed' }}
-                     className="border border-gray-500 items-center justify-center mx-5"
+                     className="border border-border-primary items-center justify-center mx-5"
                   >
-                     <Ionicons name="add" size={30} color={colors.textGray} />
+                     <Ionicons name="add" size={30} color={colors.text.secondary} />
                   </View>
                   <Text
-                     className="text-zinc-900 text-center mt-1 font-interMedium"
+                     className="text-text-primary text-center mt-1 font-interMedium"
                      style={{ fontSize: 13 }}
                   >
                      New Chat
@@ -36,7 +36,7 @@ export default function UserSuggestions() {
                      <Image source={item.img} style={styles.image} />
                   </View>
                   <Text
-                     className="text-zinc-900 text-center mt-1 font-interMedium"
+                     className="text-text-primary text-center mt-1 font-interMedium"
                      style={{ fontSize: 13 }}
                   >
                      {item.name.split(" ")[0]}

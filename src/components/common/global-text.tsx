@@ -5,7 +5,7 @@ export function Text({ className, ...props }: TextProps) {
    return (
       <RNText
          {...props}
-         className={cn("font-interRegular", className)}
+         className={cn("font-interRegular text-text-primary", className)}
       />
    );
 }
