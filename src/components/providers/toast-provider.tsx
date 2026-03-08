@@ -8,8 +8,8 @@ const ToastProvider = () => {
 
    return (
       <Toast
-         position='bottom'
-         bottomOffset={50}
+         position='top'
+         topOffset={60}
          visibilityTime={5000}
          config={{
             success: ({ text1, text2 }) => (

@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { ActivityIndicator, Image, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Toast from 'react-native-toast-message'
+import SocialAuth from './components/social-auth'
 
 export default function SignIn() {
    const { signIn, errors, fetchStatus } = useSignIn()
@@ -223,7 +224,10 @@ export default function SignIn() {
                      }
                   </CustomPressable>
 
-                  <View className='flex-row items-center gap-1 mt-9 justify-center'>
+                  {/* Social Login */}
+                  <SocialAuth />
+
+                  <View className='flex-row items-center gap-1 mt-8 justify-center'>
                      <Text className='text-[15px]'>Don't have an account? </Text>
                      <Link href="/sign-up">
                         <Text className='text-[15px] font-interSemiBold text-brand-primary'>Sign up</Text>
