@@ -1,0 +1,1 @@
+export const SYNC_USER_TO_STREAM = 'SYNC_USER_TO_STREAM'

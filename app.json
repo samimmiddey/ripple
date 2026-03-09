@@ -23,7 +23,7 @@
       "package": "com.anonymous.ripple"
     },
     "web": {
-      "output": "static",
+      "output": "server",
       "favicon": "./src/assets/images/favicon.png",
       "bundler": "metro"
     },
