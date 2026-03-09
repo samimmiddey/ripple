@@ -21,7 +21,7 @@ export const queryClient = new QueryClient({
             return failureCount < 3;
          },
          staleTime: 1000 * 60 * 10,
-         gcTime: 1000 * 60 * 60 * 24 * 2,
+         gcTime: 1000 * 60 * 60 * 24,
          refetchOnWindowFocus: false,
          refetchOnReconnect: true,
       },
@@ -85,7 +85,7 @@ export default function QueryProvider({ children }: { children: React.ReactNode 
          client={queryClient}
          persistOptions={{
             persister,
-            maxAge: 1000 * 60 * 60 * 24
+            maxAge: 1000 * 60 * 60 * 12
          }}
       >
          {children}

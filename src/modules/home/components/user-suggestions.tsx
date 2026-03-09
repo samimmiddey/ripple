@@ -1,4 +1,5 @@
 import { Text } from "@/components/common/global-text";
+import { USER_SUGGESTIONS } from "@/constants/query-keys";
 import useTheme from "@/hooks/use-theme";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "@tanstack/react-query";
@@ -15,7 +16,7 @@ export default function UserSuggestions() {
    } as any;
 
    const { data: users = [], isLoading } = useQuery({
-      queryKey: ["user-suggestions", client.userID],
+      queryKey: [USER_SUGGESTIONS, client.userID],
       queryFn: async () => {
          const res = await client.queryUsers(
             filters,
