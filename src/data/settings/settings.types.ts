@@ -12,7 +12,7 @@ export interface SettingsItem {
    iconColor: string;
 }
 
-export interface ProfileData {
+export interface SettingsData {
    title: string;
    user: {
       fallbackImg: ImageSourcePropType;

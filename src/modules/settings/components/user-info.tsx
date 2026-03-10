@@ -1,5 +1,5 @@
 import { Text } from '@/components/common/global-text';
-import { profileData } from '@/data/profile/profile.data';
+import { settingsData } from '@/data/settings/settings.data';
 import useTheme from '@/hooks/use-theme';
 import { useUser } from '@clerk/expo';
 import { Ionicons } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ const UserInfo = () => {
             source={
                user?.imageUrl
                   ? { uri: user.imageUrl }
-                  : profileData.user.fallbackImg
+                  : settingsData.user.fallbackImg
             }
          />
          <Text className='text-xl font-interBold'>{user?.fullName ?? 'User'}</Text>
@@ -33,7 +33,7 @@ const UserInfo = () => {
          </View>
          <View className="flex-row gap-3 mt-5">
             {
-               profileData.stats.map((item, index) => (
+               settingsData.stats.map((item, index) => (
                   <View
                      key={index}
                      className='flex-1 py-4 px-2 rounded-xl bg-surface-secondary items-center justify-center gap-1'

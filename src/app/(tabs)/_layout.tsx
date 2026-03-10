@@ -91,9 +91,9 @@ const TabsLayout = () => {
             }}
          />
          <Tabs.Screen
-            name="profile"
+            name="contacts"
             options={{
-               title: 'Profile',
+               title: 'Contacts',
                tabBarIcon: ({ color, focused }) => (
                   <View
                      className='h-9 w-20 mb-2 flex items-center justify-center rounded-full'
@@ -111,7 +111,33 @@ const TabsLayout = () => {
                         color: focused ? colors.brand.primary : colors.text.secondary
                      }}
                   >
-                     Profile
+                     Contacts
+                  </Text>
+               ),
+            }}
+         />
+         <Tabs.Screen
+            name="settings"
+            options={{
+               title: 'Settings',
+               tabBarIcon: ({ color, focused }) => (
+                  <View
+                     className='h-9 w-20 mb-2 flex items-center justify-center rounded-full'
+                     style={{
+                        backgroundColor: focused ? colors.surface.tertiary : 'transparent',
+                     }}
+                  >
+                     <Ionicons name="settings-outline" size={24} color={color} />
+                  </View>
+               ),
+               tabBarLabel: ({ focused }) => (
+                  <Text
+                     className={`${focused ? 'font-interSemiBold' : 'font-interRegular'}`}
+                     style={{
+                        color: focused ? colors.brand.primary : colors.text.secondary
+                     }}
+                  >
+                     Settings
                   </Text>
                ),
             }}

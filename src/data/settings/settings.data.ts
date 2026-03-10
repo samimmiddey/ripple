@@ -1,7 +1,7 @@
-import { ProfileData } from "./profile.types";
+import { SettingsData } from "./settings.types";
 
-export const profileData: ProfileData = {
-   title: 'Profile',
+export const settingsData: SettingsData = {
+   title: 'Settings',
    user: {
       fallbackImg: require('@/assets/images/user-fallback.png')
    },

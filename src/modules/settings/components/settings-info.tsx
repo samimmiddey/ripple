@@ -1,6 +1,6 @@
 import CustomPressable from '@/components/common/custom-pressable'
 import { Text } from '@/components/common/global-text'
-import { profileData } from '@/data/profile/profile.data'
+import { settingsData } from '@/data/settings/settings.data'
 import useTheme from '@/hooks/use-theme'
 import { useAuth } from '@clerk/expo'
 import { Ionicons } from '@expo/vector-icons'
@@ -8,13 +8,13 @@ import { useState } from 'react'
 import { ActivityIndicator, Switch, View } from 'react-native'
 import Toast from 'react-native-toast-message'
 
-const Settings = () => {
+const SettingsInfo = () => {
    const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
    const { signOut } = useAuth();
    const { colors, isDarkMode, toggleDarkMode } = useTheme();
 
-   const appearance = profileData.settings.appearance;
-   const settings = profileData.settings.otherSettings;
+   const appearance = settingsData.settings.appearance;
+   const settings = settingsData.settings.otherSettings;
 
    const handleSignOut = async () => {
       try {
@@ -124,4 +124,4 @@ const Settings = () => {
    )
 }
 
-export default Settings
+export default SettingsInfo

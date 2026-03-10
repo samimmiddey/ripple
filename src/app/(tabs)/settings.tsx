@@ -1,12 +1,12 @@
-import Profile from '@/modules/profile'
+import Settings from '@/modules/settings'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const ProfileScreen = () => {
+const SettingsScreen = () => {
    return (
       <SafeAreaView edges={['top']} className="flex-1 bg-surface-primary">
-         <Profile />
+         <Settings />
       </SafeAreaView>
    )
 }
 
-export default ProfileScreen
+export default SettingsScreen
