@@ -1,10 +1,11 @@
-import { Text, View } from 'react-native'
+import Explore from '@/modules/explore'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ExploreScreen = () => {
    return (
-      <View>
-         <Text>ExploreScreen</Text>
-      </View>
+      <SafeAreaView edges={['top']} className="flex-1 bg-surface-primary">
+         <Explore />
+      </SafeAreaView>
    )
 }
 

@@ -1,5 +1,5 @@
 import FullScreenLoader from '@/components/common/full-screen-loader';
-import { Text } from '@/components/common/global-text';
+import ListEmptyText from '@/components/common/list-empty-text';
 import useAppContext from '@/hooks/use-app-context';
 import useTheme from '@/hooks/use-theme';
 import { useUser } from '@clerk/expo';
@@ -36,11 +36,12 @@ const ChatList = () => {
             }}
             LoadingIndicator={() => <FullScreenLoader text='Loading chats...' />}
             EmptyStateIndicator={() => (
-               <View className='flex-1 items-center justify-center gap-2'>
+               <ListEmptyText
+                  title="Let's start chatting!"
+                  body="Find a user to start a conversation"
+               >
                   <Ionicons name="chatbubbles-outline" size={100} color={colors.text.muted} />
-                  <Text className='text-text-primary text-xl font-interSemiBold mt-2'>Let's start chatting!</Text>
-                  <Text className='text-text-secondary'>Find a user to start a conversation</Text>
-               </View>
+               </ListEmptyText>
             )}
          />
       </View>

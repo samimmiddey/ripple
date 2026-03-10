@@ -15,7 +15,7 @@ export default function UserSuggestions() {
       id: { $ne: client.userID }
    } as any;
 
-   const { data: users = [], isLoading } = useQuery({
+   const { data: users = [], isLoading, isError } = useQuery({
       queryKey: [USER_SUGGESTIONS, client.userID],
       queryFn: async () => {
          const res = await client.queryUsers(
@@ -59,32 +59,46 @@ export default function UserSuggestions() {
                </Link>
             )}
             renderItem={({ item }) => (
-               isLoading ? (
-                  <div className="w-12 h-12 bg-gray-300 rounded-full animate-pulse"></div>
-               ) : (
-                  users &&
-                  <View style={styles.cardContainer}>
-                     <View style={styles.card} className="bg-surface-secondary items-center justify-center">
+               <View style={styles.cardContainer}>
+                  <View style={styles.card} className="bg-surface-secondary items-center justify-center">
+                     {
+                        item.image ? (
+                           <Image
+                              source={{ uri: item.image }}
+                              style={styles.image}
+                           />
+                        ) : (
+                           <Ionicons name="person-sharp" size={30} color={colors.text.muted} />
+                        )
+                     }
+                  </View>
+                  <Text
+                     className="text-text-primary text-center mt-1 font-interMedium"
+                     style={{ fontSize: 13 }}
+                  >
+                     {item?.name?.split(" ")[0] ?? 'User'}
+                  </Text>
+               </View>
+            )}
+            ListEmptyComponent={() => {
+               if (true) {
+                  const loaders = Array.from({ length: 5 });
+
+                  return (
+                     <View style={styles.cardContainer} className="flex-row items-start gap-5 mt-1">
                         {
-                           item.image ? (
-                              <Image
-                                 source={{ uri: item.image }}
-                                 style={styles.image}
+                           loaders.map((_, i) => (
+                              <View
+                                 key={i}
+                                 className="w-16 h-16 bg-gray-300 rounded-full animate-pulse"
                               />
-                           ) : (
-                              <Ionicons name="person-sharp" size={30} color={colors.text.muted} />
-                           )
+                           ))
                         }
                      </View>
-                     <Text
-                        className="text-text-primary text-center mt-1 font-interMedium"
-                        style={{ fontSize: 13 }}
-                     >
-                        {item?.name?.split(" ")[0] ?? 'User'}
-                     </Text>
-                  </View>
-               )
-            )}
+                  )
+               };
+
+            }}
          />
       </View>
    );
