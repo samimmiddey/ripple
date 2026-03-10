@@ -1,7 +1,6 @@
 import { Text } from '@/components/common/global-text'
 import HeaderLayout from '@/components/layouts/header-layout'
 import { exploreData } from '@/data/explore/explore.data'
-import React from 'react'
 
 const Header = () => {
     return (

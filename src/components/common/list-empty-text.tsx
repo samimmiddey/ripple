@@ -1,4 +1,3 @@
-import useTheme from '@/hooks/use-theme';
 import { View } from 'react-native';
 import { Text } from './global-text';
 
@@ -9,8 +8,6 @@ interface Props {
 }
 
 const ListEmptyText = ({ children, title, body }: Props) => {
-    const { colors } = useTheme();
-
     return (
         <View className='flex-1 items-center justify-center gap-2'>
             {children}

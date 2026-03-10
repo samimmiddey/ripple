@@ -81,16 +81,16 @@ export default function UserSuggestions() {
                </View>
             )}
             ListEmptyComponent={() => {
-               if (true) {
+               if (isLoading) {
                   const loaders = Array.from({ length: 5 });
 
                   return (
-                     <View style={styles.cardContainer} className="flex-row items-start gap-5 mt-1">
+                     <View style={styles.cardContainer} className="flex-row items-start gap-4">
                         {
                            loaders.map((_, i) => (
                               <View
                                  key={i}
-                                 className="w-16 h-16 bg-gray-300 rounded-full animate-pulse"
+                                 className="w-[62px] h-[62px] bg-gray-300 rounded-full animate-pulse"
                               />
                            ))
                         }
@@ -98,6 +98,11 @@ export default function UserSuggestions() {
                   )
                };
 
+               if (isError) {
+                  return (
+                     <Text className="text-sm text-red-500 mt-6 font-interMedium">Something went wrong!</Text>
+                  )
+               }
             }}
          />
       </View>
